@@ -1,7 +1,7 @@
 
 # Online Decision Transformer
 
-Unofficial implemenation of [Online Decision Transformer](https://arxiv.org/abs/2202.05607) for MuJoCo robotics experiments. 
+Unofficial implemenation of [Online Decision Transformer](https://arxiv.org/abs/2202.05607) for MuJoCo robotics experiments. Please reach out if mistakes are found or you have any questions. 
 
 ## Overview
 
@@ -9,7 +9,7 @@ This codebase is based off the original codebase from [Decision Transformer: Rei
 
 ## Installation
 
-As with the original codebase, experiments require MuJoCo.Follow the instructions in the [mujoco-py repo](https://github.com/openai/mujoco-py) to install.
+As with the original codebase, experiments require MuJoCo. Follow the instructions in the [mujoco-py repo](https://github.com/openai/mujoco-py) to install.
 Then, dependencies can be installed with the following command:
 
 ```
@@ -37,7 +37,7 @@ However, we use $$\mathbf{tanh}(N(\mu_\theta(s_{-K,t}, g_{-K,t}), \Sigma_{\theta
 
 We first sample from a normal distribution with parameters outputted by the transformer policy and then squash the sampled value to the action space using tanh. 
 
-There is no analytical form for the entropy of this distribution, but we can evaluate the (log) probability of a sample. We use a Monte Carlo estimate over a batch, similarly to the paper, specifically we also sample $k$ actions for each transition within the batch.
+There is no analytical form for the entropy of this distribution, but we can evaluate the (log) probability of a sample. We use a Monte Carlo estimate over a batch, similarly to the paper. Specifically we also sample $k$ actions for each transition within the batch to more closely approximate the entropy. 
 
 Emperically, we find that using tanh leads to better performance, but this change can be ignored by omitting `--stochastic_tanh`. 
 
@@ -57,9 +57,9 @@ python experiment.py --env hopper --dataset medium --model_type dt --num_eval_ep
 python experiment.py --env hopper --dataset medium --model_type dt --pretrained_model=./models/hopper/dt_gym-experiment-hopper-medium-506105.pt --stochastic --use_action_means --online_training --eval_context=5 --K=20 --batch_size=256 --num_steps_per_iter=300 --max_iters=200 --num_eval_episodes=50  --device=cuda:2 --target_entropy  --stochastic_tanh
 ```
 
-Results can be logged by using `--log_to_wandb=True`. We include a pretrained model for hopper. 
+Results can be logged by using `--log_to_wandb=True`.
 
 ## Experimental Results
 
-Experimental results can be found here: 
+Experimental wandb results can be found for online learning [here](https://wandb.ai/daniellawson9999/decision-transformer/reports/Online-Decision-Transformer-Hopper--VmlldzoyMzEyOTI1?accessToken=7k208s5um70l6v64xvco1uxlbfesosqud30gqj534kiqarhp2rk1h5bu12pe6kmk) for hopper. This implementation seems to converge after ~60 exploration rounds instead of ~250 as shown in the paper. 
 
