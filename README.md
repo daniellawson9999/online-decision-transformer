@@ -5,7 +5,7 @@ Unofficial implemenation of [Online Decision Transformer](https://arxiv.org/abs/
 
 ## Overview
 
-This codebase off original codebase from [Decision Transformer: Reinforcement Learning via Sequence Modeling](https://sites.google.com/berkeley.edu/decision-transformer).
+This codebase is based off the original codebase from [Decision Transformer: Reinforcement Learning via Sequence Modeling](https://sites.google.com/berkeley.edu/decision-transformer).
 
 ## Installation
 
