@@ -61,5 +61,5 @@ Results can be logged by using `--log_to_wandb=True`.
 
 ## Experimental Results
 
-Experimental wandb results can be found for online learning [here](https://wandb.ai/daniellawson9999/decision-transformer/reports/Online-Decision-Transformer-Hopper--VmlldzoyMzEyOTI1?accessToken=7k208s5um70l6v64xvco1uxlbfesosqud30gqj534kiqarhp2rk1h5bu12pe6kmk) for hopper. This implementation seems to converge after ~60 exploration rounds instead of ~250 as shown in the paper. 
+Experimental wandb results can be found for online learning [here](https://wandb.ai/daniellawson9999/decision-transformer/reports/Online-Decision-Transformer-Hopper--VmlldzoyMzEyOTI1?accessToken=7k208s5um70l6v64xvco1uxlbfesosqud30gqj534kiqarhp2rk1h5bu12pe6kmk) for hopper. This implementation seems to converge after ~60-70 exploration rounds instead of ~250 as shown in the paper. 
 
