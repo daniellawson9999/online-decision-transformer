@@ -30,8 +30,8 @@ Alternatively, the environment can be setup using Docker with the attached Docke
 
 There are some small implementation detail differences and other assumed implementation detials that may be different. 
 
-Originally, the policy is parameterized as:
-$$\pi_\theta(a_t|s_{-K,t}, g_{-K,t}) = N(\mu_\theta(s_{-K,t}, g_{-K,t}), \Sigma_{\theta}(s_{-K,t}, g_{-K,t}))$$
+<!--- Originally, the policy is parameterized as:
+$$\pi_\theta(a_t|s_{-K,t}, g_{-K,t}) = N(\mu_\theta(s_{-K,t}, g_{-K,t}), \Sigma_{\theta}(s_{-K,t}, g_{-K,t}))$$ -->
 
 However, we use $$\mathbf{tanh}(N(\mu_\theta(s_{-K,t}, g_{-K,t}), \Sigma_{\theta}(s_{-K,t}, g_{-K,t})))$$
 
